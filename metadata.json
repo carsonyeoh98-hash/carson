@@ -1,0 +1,6 @@
+{
+  "name": "SH Group HR Assistant",
+  "description": "An AI-powered HR assistant for SH Group employees to query company policies, leave entitlements, and handbook information.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

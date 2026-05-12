@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-navy: #0d2b45;
+  --color-navy-light: #163d5e;
+  --color-gold: #c8a84b;
+  --color-gold-light: rgba(200, 168, 75, 0.15);
+  --color-gold-border: rgba(200, 168, 75, 0.3);
+  --color-hr-light: #f5f7fa;
+  --color-hr-border: #dde3ec;
+  --color-hr-text: #1a2535;
+  --color-hr-muted: #6b7a92;
+  --color-hr-green: #1a7a5e;
+}
+
+@layer base {
+  body {
+    @apply bg-hr-light text-hr-text font-sans antialiased min-h-screen flex flex-col;
+  }
+}
+
+/* Custom fade-in for messages */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Custom dots for typing animation */
+.typing-dots span {
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+  @apply bg-hr-muted rounded-full mx-0.5;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.typing-dots span:nth-child(1) { animation-delay: -0.32s; }
+.typing-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1.0); }
+}
+
